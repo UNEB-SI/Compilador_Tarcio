@@ -625,7 +625,7 @@
 					</to>&#13;
 				</fsa_trans>&#13;
 				<fsa_trans>&#13;
-					<input>caractere</input>&#13;
+					<input>outro*</input>&#13;
 					<from>&#13;
 						<name>42</name>&#13;
 						<id>42</id>&#13;
