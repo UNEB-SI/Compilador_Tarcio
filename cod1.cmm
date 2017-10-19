@@ -1,0 +1,26 @@
+/*************************/
+
+/* Comentario inicial
+*/
+
+/* Funcao soma */
+
+inteiro soma(inteiro a, inteiro b) {
+
+    inteiro z;
+
+    z= a+b;
+    retorne z;
+}
+
+/* Programa principal
+
+semretorno principal(semparam) {
+
+    inteiro x, y, z;
+
+    x=3; y | 5;
+    z=soma(x, y);
+    print("O valor da soma eh: z);
+    retorne;
+}
