@@ -21,8 +21,11 @@ typedef struct tk{
     int posicao;
 }token;
 
-
 //ASSINATURA DE FUNÇÕES
+int addTabelaLiteral(char adcionar[]);
+int comparaPalavraReservada(char palavra[]);
+void erroAnalisadorLexico(char descricao[]);
+token analisadorLexico(FILE *arquivo);
 
 //ENUM CATEGORIAS
 typedef enum{
