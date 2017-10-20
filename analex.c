@@ -151,20 +151,6 @@ token analisadorLexico(FILE *arquivo){
                 tk.cod = CHAVES_FECHA;
                 return tk;
             }
-            /*CASO SEJA ABRE COLCHETE*/
-            else if(ch == '['){
-                estado = 9;
-                tk.categoria = SN;
-                tk.cod = COLCHETES_ABRE;
-                return tk;
-            }
-            /*CASO SEJA FECHA COLCHETE*/
-            else if(ch == ']'){
-                estado = 10;
-                tk.categoria = SN;
-                tk.cod = COLCHETES_FECHA;
-                return tk;
-            }
             /*CASO SEJA & */
             else if(ch == '&'){ estado = 23; }
             /*CASO SEJA | */
@@ -297,7 +283,7 @@ token analisadorLexico(FILE *arquivo){
                 estado = 16;
                 /*CONTA LINHA*/
                 if(ch == '\n'){
-                    //linhas++;
+                    linhas++;
                 }
                 /*SE FIM DO ARQUIVO*/
                 if(feof(arquivo)){
@@ -322,7 +308,7 @@ token analisadorLexico(FILE *arquivo){
             }else if(isprint(ch) || iscntrl(ch)){
                 estado = 16;
                 if(ch == '\n'){
-                    //linhas++;
+                    linhas++;
                 }
             }else{
                 erroAnalisadorLexico("Erro no comentário!");
@@ -492,10 +478,12 @@ token analisadorLexico(FILE *arquivo){
         case 46: /* LEU n */
             /* SE LEU ' */
             if (ch == '\'') {
-                estado = 48;
-                tk.categoria = CT_C;
-                tk.valor_ch = '\n';
-                return tk;
+                //ao invés de retornar token, aumenta a linha
+                //estado = 48;
+                //tk.categoria = CT_C;
+                //tk.valor_ch = '\n';
+                estado = 0;
+                linhas++;
             }else{
                 erroAnalisadorLexico("Caracter mal formada");
             }
