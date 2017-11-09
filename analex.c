@@ -347,6 +347,7 @@ token analisadorLexico(FILE *arquivo){
             /*SE LER OUTRO* É MAIOR_Q */
             }else{
                 estado = 28;
+                ungetc(ch, arquivo);
                 tk.categoria = SN;
                 tk.cod = MAIOR_Q;
                 return tk;
@@ -363,6 +364,7 @@ token analisadorLexico(FILE *arquivo){
             /*SE LER OUTRO* É MENOR_Q */
             }else{
                 estado = 32;
+                ungetc(ch, arquivo);
                 tk.categoria = SN;
                 tk.cod = MENOR_Q;
                 return tk;
@@ -379,6 +381,7 @@ token analisadorLexico(FILE *arquivo){
             /*SE LER OUTRO* É NEGAÇÃO */
             }else{
                 estado = 35;
+                ungetc(ch, arquivo);
                 tk.categoria = SN;
                 tk.cod = NEGACAO;
                 return tk;
@@ -392,9 +395,10 @@ token analisadorLexico(FILE *arquivo){
                 tk.categoria = SN;
                 tk.cod = COMPARA;
                 return tk;
-            /*SE LER OUTRO* É NEGAÇÃO */
+            /*SE LER OUTRO* É ATRIB */
             }else{
                 estado = 38;
+                ungetc(ch, arquivo);
                 tk.categoria = SN;
                 tk.cod = ATRIB;
                 return tk;
