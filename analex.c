@@ -118,7 +118,7 @@ token analisadorLexico(FILE *arquivo){
             else if(ch == '*'){
                 estado = 14;
                 tk.categoria = SN;
-                tk.cod = SOMA;
+                tk.cod = MULT;
                 return tk;
             }
             /*CASO SEJA BARRA*/
